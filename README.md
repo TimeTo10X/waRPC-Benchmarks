@@ -1,1 +1,5 @@
-# Benchmarks ^_^
+<div align='center'>
+
+### waRPC Benchmarks
+
+</div>
