@@ -18,10 +18,20 @@ Benchmarks for WAnime RPC framework, against other RPC implementations
 
 
 ## Intro
+These benchmarks cover three workloads:
 
-- nop
-- add
-- hex
+- **nop**
+- **add**
+- **hex**
+
+Each framework uses its own serialization layer:
+
+| Framework | Serialization |
+|-----------|---------------|
+| waRPC     | Polyglot      |
+| gRPC      | Protobuf      |
+| iceRPC    | Slice         |
+
 
 ## WAnime RPC
 
