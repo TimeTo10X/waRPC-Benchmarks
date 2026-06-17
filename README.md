@@ -11,10 +11,11 @@ Benchmarks for WAnime RPC framework, against other RPC implementations
 ## Table of Contents
 
 1. [Intro](#intro)
-2. [WAnime RPC](#wanime-rpc)
-3. [Google RPC](#google-rpc)
-4. [Ice RPC](#ice-rpc)
-5. [License](#license)
+2. [Prerequisites](#prerequisites)
+3. [WAnime RPC](#wanime-rpc)
+4. [Google RPC](#google-rpc)
+5. [Ice RPC](#ice-rpc)
+6. [License](#license)
 
 
 ## Intro
@@ -32,6 +33,7 @@ Each framework uses its own serialization layer:
 | gRPC      | Protobuf      |
 | iceRPC    | Slice         |
 
+## Prerequisites
 
 ## WAnime RPC
 
