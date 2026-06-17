@@ -25,7 +25,7 @@ Benchmarks for WAnime RPC framework, against other RPC implementations
 
 ## WAnime RPC
 
-WAnime RPC (waRPC) is a modern RPC framework built on top of QUIC and written in c++ ^_^, by WAnime([wanime.io](https://wanime.io)).
+WAnime RPC (waRPC) is a modern RPC framework built on top of QUIC and written in modern c++ ^_^, by WAnime([wanime.io](https://wanime.io)).
 
 ## Google RPC
 
