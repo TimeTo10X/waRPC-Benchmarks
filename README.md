@@ -1,6 +1,8 @@
 <div align='center'>
 
-### waRPC Benchmarks
+### WAnime RPC Benchmarks
+
+Benchmarks for WAnime RPC framework, against other RPC implementations
 
 </div>
 
