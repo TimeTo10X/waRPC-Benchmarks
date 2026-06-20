@@ -79,7 +79,7 @@ curl -fsSL https://wrsc.wanime.io/install.sh | sh
 Installing `warpc` && `polyglot`
 
 ```sh
-wapm y warcp polyglot --version 0.1.0
+wapm y warpc polyglot --version 0.1.0
 ```
 
 ## WAnime RPC
