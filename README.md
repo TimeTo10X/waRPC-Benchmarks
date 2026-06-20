@@ -54,6 +54,29 @@ Arch btw:
 sudo pacman -Syu --needed grpc protobuf dotnet-sdk cmake ninja llvm clang openssl
 ```
 
+waRPC
+
+- wapm
+- wrsc
+- wapm:warpc
+- wapm:polyglot
+
+Install `wapm` && `wrsc`
+
+```sh
+curl -fsSL https://wapm.wanime.io/install.sh | sh
+```
+
+```sh
+curl -fsSL https://wrsc.wanime.io/install.sh | sh
+```
+
+Installing `warpc` && `polyglot`
+
+```sh
+wapm y warcp polyglot
+```
+
 ## WAnime RPC
 
 WAnime RPC (waRPC) is a modern RPC framework built on top of QUIC and written in modern c++ ^_^, by [WAnime](https://wanime.io).
