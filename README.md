@@ -39,18 +39,19 @@ gRPC & IceRPC
 
 - gRPC
 - Protobuf
-- dotnet `v10.0` or higher
+- dotnet
+- cmake
+- ninja
+- llvm
+- openssl
 
 MacOS:
-
 ```sh
-brew install grpc protobuf && brew install --cask dotnet-sdk
+brew install grpc protobuf cmake ninja llvm openssl && brew install --cask dotnet-sdk
 ```
-
 Arch btw:
-
 ```sh
-sudo pacman -Syu --needed grpc protobuf dotnet-sdk
+sudo pacman -Syu --needed grpc protobuf dotnet-sdk cmake ninja llvm clang openssl
 ```
 
 ## WAnime RPC
