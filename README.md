@@ -35,6 +35,11 @@ Each framework uses its own serialization layer:
 
 ## Prerequisites
 
+> [!TIP]
+> If u want to avoid manual installation,
+> just use `j setup` ^^ </br>
+> (Works only on MacOS and Arch)
+
 gRPC & IceRPC
 
 - gRPC
