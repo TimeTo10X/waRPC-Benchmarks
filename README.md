@@ -35,6 +35,24 @@ Each framework uses its own serialization layer:
 
 ## Prerequisites
 
+gRPC & IceRPC
+
+- gRPC
+- Protobuf
+- dotnet `v10.0` or higher
+
+MacOS:
+
+```sh
+brew install grpc protobuf && brew install --cask dotnet-sdk
+```
+
+Arch btw:
+
+```sh
+sudo pacman -Syu --needed grpc protobuf dotnet-sdk
+```
+
 ## WAnime RPC
 
 WAnime RPC (waRPC) is a modern RPC framework built on top of QUIC and written in modern c++ ^_^, by WAnime([wanime.io](https://wanime.io)).
