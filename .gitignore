@@ -1,0 +1,17 @@
+# Build dirs
+**/build/*
+
+# Logs
+**/logs/*
+
+# Certs
+**/certs/*
+
+# Env
+*.env
+
+# cc
+compile_commands.json
+
+# clangd
+.clangd
