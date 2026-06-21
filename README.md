@@ -86,13 +86,49 @@ wapm y warpc polyglot --version 0.1.0
 
 WAnime RPC (waRPC) is a modern RPC framework built on top of QUIC and written in modern c++ ^_^, by [WAnime](https://wanime.io).
 
+**Running waRPC benchamrks:**
+
+```sh
+# Start waRPC server
+j warpc_serve
+```
+
+```sh
+# Run bench
+j warpc_bench
+```
+
 ## Google RPC
 
 gRPC is a modern open source high performance Remote Procedure Call (RPC) framework that can run in any environment. It can efficiently connect services in and across data centers with pluggable support for load balancing, tracing, health checking and authentication. It is also applicable in last mile of distributed computing to connect devices, mobile applications and browsers to backend services.
 
+**Running gRPC benchamrks:**
+
+```sh
+# Start gRPC server
+j grpc_serve
+```
+
+```sh
+# Run bench
+j grpc_bench
+```
+
 ## Ice RPC
 
 A C# RPC framework built for QUIC, with bidirectional streaming, first-class async/await, and Protobuf support. 
+
+**Running IceRPC benchamrks:**
+
+```sh
+# Start IceRPC server
+j ice_serve
+```
+
+```sh
+# Run bench
+j ice_bench
+```
 
 ## License
 
