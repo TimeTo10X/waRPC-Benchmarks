@@ -16,7 +16,8 @@ Benchmarks for WAnime RPC framework, against other RPC implementations
 4. [Google RPC](#google-rpc)
 5. [Ice RPC](#ice-rpc)
 6. [Benchmarks](#benchmarks)
-7. [License](#license)
+7. [Docs](#docs)
+8. [License](#license)
 
 
 ## Intro
@@ -434,6 +435,12 @@ Hex
 | waRPC  |  0%    |  0%      |  0%     |
 | gRPC   |  0%    |  0%      |  0%     |
 | iceRPC |  0%    |  0%      |  0%     | 
+
+## Docs
+
+- [WAnime RPC](https://wanime.io/warpc)
+- [Google RPC](https://grpc.io/docs/)
+- [Ice RPC](https://docs.icerpc.dev/)
  
 ## License
 
