@@ -15,7 +15,8 @@ Benchmarks for WAnime RPC framework, against other RPC implementations
 3. [WAnime RPC](#wanime-rpc)
 4. [Google RPC](#google-rpc)
 5. [Ice RPC](#ice-rpc)
-6. [License](#license)
+6. [Benchmarks](#benchmarks)
+7. [License](#license)
 
 
 ## Intro
@@ -130,6 +131,310 @@ j ice_serve
 j ice_bench
 ```
 
+## Benchmarks
+
+The **"trust me bro"** bench by [WAnime](https://wanime.io) ^^
+
+## MacOS (No kernel bypass)
+
+> [!IMPORTANT]
+> In this configuration `waRPC` server && client, both **are not** using `io_uring` kernel bypass.
+
+### Sync API
+
+1 Client @100,000 calls
+
+**Latency per call**
+
+Nop
+
+|   ~    | min  | avg  | p50  | p90  | p99  | p99.9 | max  |
+|:------:|:----:|:----:|:----:|:----:|:----:|:-----:|:----:|
+| waRPC  | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| gRPC   | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| iceRPC | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+
+Add
+
+|   ~    | min  | avg  | p50  | p90  | p99  | p99.9 | max  |
+|:------:|:----:|:----:|:----:|:----:|:----:|:-----:|:----:|
+| waRPC  | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| gRPC   | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| iceRPC | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+
+Hex
+
+|   ~    | min  | avg  | p50  | p90  | p99  | p99.9 | max  |
+|:------:|:----:|:----:|:----:|:----:|:----:|:-----:|:----:|
+| waRPC  | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| gRPC   | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| iceRPC | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+
+**Throughput**
+
+|   ~    |  Nop     | Add       | Hex     |
+|:------:|:--------:|:--------:|:--------:|
+| waRPC  |  0qps    |  0qps    |  0qps    |
+| gRPC   |  0qps    |  0qps    |  0qps    |
+| iceRPC |  0qps    |  0qps    |  0qps    |
+
+**Memory usage Client**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0mb    |  0mb    |  0mb    |
+| gRPC   |  0mb    |  0mb    |  0mb    |
+| iceRPC |  0mb    |  0mb    |  0mb    |
+
+**CPU usage Client**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0%    |  0%      |  0%     |
+| gRPC   |  0%    |  0%      |  0%     |
+| iceRPC |  0%    |  0%      |  0%     | 
+
+**Memory usage Server**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0mb    |  0mb    |  0mb    |
+| gRPC   |  0mb    |  0mb    |  0mb    |
+| iceRPC |  0mb    |  0mb    |  0mb    |
+
+**CPU usage Server**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0%    |  0%      |  0%     |
+| gRPC   |  0%    |  0%      |  0%     |
+| iceRPC |  0%    |  0%      |  0%     | 
+
+### Async API
+
+> [!NOTE]
+> `waRPC` -> `async` API && `Atomic Execution` API <br>
+> `gRPC` -> `callback` API with `CQ` </br>
+> `iceRPC` -> todo
+
+1 Client @100,000 calls
+
+**Latency per call**
+
+Nop
+
+|   ~    | min  | avg  | p50  | p90  | p99  | p99.9 | max  |
+|:------:|:----:|:----:|:----:|:----:|:----:|:-----:|:----:|
+| waRPC  | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| gRPC   | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| iceRPC | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+
+Add
+
+|   ~    | min  | avg  | p50  | p90  | p99  | p99.9 | max  |
+|:------:|:----:|:----:|:----:|:----:|:----:|:-----:|:----:|
+| waRPC  | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| gRPC   | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| iceRPC | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+
+Hex
+
+|   ~    | min  | avg  | p50  | p90  | p99  | p99.9 | max  |
+|:------:|:----:|:----:|:----:|:----:|:----:|:-----:|:----:|
+| waRPC  | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| gRPC   | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| iceRPC | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+
+**Throughput**
+
+|   ~    |  Nop     | Add       | Hex     |
+|:------:|:--------:|:--------:|:--------:|
+| waRPC  |  0qps    |  0qps    |  0qps    |
+| gRPC   |  0qps    |  0qps    |  0qps    |
+| iceRPC |  0qps    |  0qps    |  0qps    |
+
+**Memory usage Client**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0mb    |  0mb    |  0mb    |
+| gRPC   |  0mb    |  0mb    |  0mb    |
+| iceRPC |  0mb    |  0mb    |  0mb    |
+
+**CPU usage Client**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0%    |  0%      |  0%     |
+| gRPC   |  0%    |  0%      |  0%     |
+| iceRPC |  0%    |  0%      |  0%     | 
+
+**Memory usage Server**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0mb    |  0mb    |  0mb    |
+| gRPC   |  0mb    |  0mb    |  0mb    |
+| iceRPC |  0mb    |  0mb    |  0mb    |
+
+**CPU usage Server**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0%    |  0%      |  0%     |
+| gRPC   |  0%    |  0%      |  0%     |
+| iceRPC |  0%    |  0%      |  0%     | 
+
+## Linux (With kernel bypass)
+
+> [!IMPORTANT]
+> In this configuration `waRPC` server && client, both **are using** `io_uring` kernel bypass.
+
+### Sync API
+
+1 Client @100,000 calls
+
+**Latency per call**
+
+Nop
+
+|   ~    | min  | avg  | p50  | p90  | p99  | p99.9 | max  |
+|:------:|:----:|:----:|:----:|:----:|:----:|:-----:|:----:|
+| waRPC  | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| gRPC   | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| iceRPC | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+
+Add
+
+|   ~    | min  | avg  | p50  | p90  | p99  | p99.9 | max  |
+|:------:|:----:|:----:|:----:|:----:|:----:|:-----:|:----:|
+| waRPC  | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| gRPC   | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| iceRPC | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+
+Hex
+
+|   ~    | min  | avg  | p50  | p90  | p99  | p99.9 | max  |
+|:------:|:----:|:----:|:----:|:----:|:----:|:-----:|:----:|
+| waRPC  | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| gRPC   | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| iceRPC | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+
+**Throughput**
+
+|   ~    |  Nop     | Add       | Hex     |
+|:------:|:--------:|:--------:|:--------:|
+| waRPC  |  0qps    |  0qps    |  0qps    |
+| gRPC   |  0qps    |  0qps    |  0qps    |
+| iceRPC |  0qps    |  0qps    |  0qps    |
+
+**Memory usage Client**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0mb    |  0mb    |  0mb    |
+| gRPC   |  0mb    |  0mb    |  0mb    |
+| iceRPC |  0mb    |  0mb    |  0mb    |
+
+**CPU usage Client**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0%    |  0%      |  0%     |
+| gRPC   |  0%    |  0%      |  0%     |
+| iceRPC |  0%    |  0%      |  0%     | 
+
+**Memory usage Server**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0mb    |  0mb    |  0mb    |
+| gRPC   |  0mb    |  0mb    |  0mb    |
+| iceRPC |  0mb    |  0mb    |  0mb    |
+
+**CPU usage Server**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0%    |  0%      |  0%     |
+| gRPC   |  0%    |  0%      |  0%     |
+| iceRPC |  0%    |  0%      |  0%     | 
+
+### Async API
+
+> [!NOTE]
+> `waRPC` -> `async` API && `Atomic Execution` API <br>
+> `gRPC` -> `callback` API with `CQ` </br>
+> `iceRPC` -> todo
+
+1 Client @100,000 calls
+
+**Latency per call**
+
+Nop
+
+|   ~    | min  | avg  | p50  | p90  | p99  | p99.9 | max  |
+|:------:|:----:|:----:|:----:|:----:|:----:|:-----:|:----:|
+| waRPC  | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| gRPC   | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| iceRPC | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+
+Add
+
+|   ~    | min  | avg  | p50  | p90  | p99  | p99.9 | max  |
+|:------:|:----:|:----:|:----:|:----:|:----:|:-----:|:----:|
+| waRPC  | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| gRPC   | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| iceRPC | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+
+Hex
+
+|   ~    | min  | avg  | p50  | p90  | p99  | p99.9 | max  |
+|:------:|:----:|:----:|:----:|:----:|:----:|:-----:|:----:|
+| waRPC  | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| gRPC   | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+| iceRPC | 0us  | 0us  | 0us  | 0us  | 0us  | 0us   | 0us  |
+
+**Throughput**
+
+|   ~    |  Nop     | Add       | Hex     |
+|:------:|:--------:|:--------:|:--------:|
+| waRPC  |  0qps    |  0qps    |  0qps    |
+| gRPC   |  0qps    |  0qps    |  0qps    |
+| iceRPC |  0qps    |  0qps    |  0qps    |
+
+**Memory usage Client**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0mb    |  0mb    |  0mb    |
+| gRPC   |  0mb    |  0mb    |  0mb    |
+| iceRPC |  0mb    |  0mb    |  0mb    |
+
+**CPU usage Client**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0%    |  0%      |  0%     |
+| gRPC   |  0%    |  0%      |  0%     |
+| iceRPC |  0%    |  0%      |  0%     | 
+
+**Memory usage Server**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0mb    |  0mb    |  0mb    |
+| gRPC   |  0mb    |  0mb    |  0mb    |
+| iceRPC |  0mb    |  0mb    |  0mb    |
+
+**CPU usage Server**
+
+|   ~    |  Nop    | Add     | Hex     |
+|:------:|:-------:|:-------:|:-------:|
+| waRPC  |  0%    |  0%      |  0%     |
+| gRPC   |  0%    |  0%      |  0%     |
+| iceRPC |  0%    |  0%      |  0%     | 
+ 
 ## License
 
 This project is licensed under [MIT](LICENSE) license
