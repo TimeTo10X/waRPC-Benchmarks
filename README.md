@@ -1,8 +1,11 @@
+
 <div align='center'>
 
 ### WAnime RPC Benchmarks
 
 Benchmarks for WAnime RPC framework, against other RPC implementations
+
+<img width="auto" height="350" alt="612233915-9323cf83-741f-46fd-ac3b-65ec48cf3f67" src="https://github.com/user-attachments/assets/f3bf29bc-8592-4535-ba55-3e637de64023" />
 
 </div>
 
